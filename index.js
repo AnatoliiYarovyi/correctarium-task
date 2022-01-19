@@ -22,7 +22,7 @@ index.post('/', function (req, res) {
     const { price, time, deadline, deadline_date } = correctarium(req.body);
     console.log(typeof req.body.count);
     if (typeof req.body.count != 'number') {
-      res.send({ error: 'Алло, шо ты лепишь? Число давай!' });
+      res.send({ error: 'Алло, шо ты лепишь?:) Число давай!' });
     } else {
       res.send({ price, time, deadline, deadline_date });
     }
