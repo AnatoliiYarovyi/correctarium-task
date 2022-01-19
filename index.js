@@ -20,8 +20,12 @@ index.post('/', function (req, res) {
   try {
     console.log(req.body);
     const { price, time, deadline, deadline_date } = correctarium(req.body);
-
-    res.send({ price, time, deadline, deadline_date });
+    console.log(typeof req.body.count);
+    if (typeof req.body.count != 'number') {
+      res.send({ error: 'Алло, шо ты лепишь? Число давай!' });
+    } else {
+      res.send({ price, time, deadline, deadline_date });
+    }
   } catch (error) {
     console.log(error);
   }
